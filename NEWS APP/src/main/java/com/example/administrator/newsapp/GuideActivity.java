@@ -46,7 +46,7 @@ public class GuideActivity extends AppCompatActivity
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels)
             {
-                 fLparams.leftMargin=position*40+(int)(positionOffset*40);
+                 fLparams.leftMargin=position*60+(int)(positionOffset*60);
                  reddotview.setLayoutParams(fLparams);
 
             }
@@ -54,7 +54,7 @@ public class GuideActivity extends AppCompatActivity
             @Override
             public void onPageSelected(int position)
             {
-                if(position==2)
+                if(position==(viewlist.size()-1))
                 {
                     bt.setVisibility(View.VISIBLE);
                 }
@@ -112,8 +112,14 @@ public class GuideActivity extends AppCompatActivity
                     View view=new View(this);
                     view.setBackgroundResource(R.drawable.guide_grey_dot);
                     LinearLayout.LayoutParams params=new LinearLayout.LayoutParams(40,40);
-                    params.leftMargin=20;
-                    params.rightMargin=20;
+                    if(i==0)
+                    {
+
+                    }
+                    else
+                    {
+                        params.leftMargin=20;
+                    }
                     view.setLayoutParams(params);
                     ll.addView(view);
                     Log.i("TAG","guidedot所用数据加载完毕");
@@ -122,14 +128,13 @@ public class GuideActivity extends AppCompatActivity
             public void click(View view)
             {
                 startActivity(new Intent(this,MainActivity.class));
+                finish();
             }
             public void reddot()
             {
                 reddotview = new View(this);
                 reddotview.setBackgroundResource(R.drawable.guide_red_dot);
                 fLparams = new FrameLayout.LayoutParams(40,40);
-                fLparams.leftMargin=20;
-                fLparams.rightMargin=20;
                 reddotview.setLayoutParams(fLparams);
                 fl.addView(reddotview);
             }

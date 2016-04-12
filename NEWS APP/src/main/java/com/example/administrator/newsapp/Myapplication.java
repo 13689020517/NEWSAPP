@@ -8,7 +8,7 @@ import android.content.SharedPreferences;
  */
 public class Myapplication extends Application
 {
-        private SharedPreferences SP;
+        public SharedPreferences SP;
     @Override
     public void onCreate()
     {
