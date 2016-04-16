@@ -32,4 +32,20 @@ public class MainActivity extends SlidingFragmentActivity
         FT.replace(R.id.left,leftfragment);
         FT.commit();
     }
+    public content_fragment getcontent_fragment()
+    {
+        return content;
+    }
+    public left_fragment getLeftfragment()
+    {
+        FragmentManager fragmentManager = getFragmentManager();
+        left_fragment leftfragment = (left_fragment) fragmentManager.findFragmentByTag("leftmenufragment");
+        return leftfragment;
+    }
+    public void setSlidingMenuToggle(){
+        slidingMenu.toggle();
+    }
+    public  SlidingMenu getMySlidingMenu(){
+        return  slidingMenu;
+    }
 }
